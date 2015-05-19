@@ -19,7 +19,7 @@ HADep 目前分为两个部分：
  1. **HATransformation**负责把基于Acme描述的待部署的自定义体系架构对象转换成相应的高可用体系架构对象；
 用户在file/input.acme文件里输入使用Acme描述的初始体系架构对象，其中构件属性必须包含其进行部署所必要的参数数据；针对需要进行高可用部署的构件，需要定义HAParams属性：ServiceCategory，Mode和Size。以Web系统中的WebServer构件定义为例：
 
-···
+```
     Component WebServer  = {
         Port receiveHttpRequestPort  = {
         }
@@ -29,7 +29,7 @@ HADep 目前分为两个部分：
         Property ServicePort : string = "80";
         Property HAParams = {[ServiceCategory = "stateless";],[Mode = "active/active";],[Size = "2";]};  
     }
-···
+```
 
  在完成自定义体系结构后，运行HATransformation工程即可。
  2.  **Dep**负责根据完成转换的高可用体系架构对象进行应用服务实例的自动化部署，基于Docker Compose这一云服务编排工具实现。因为在自动化部署过程中涉及到安装软件相关的配置文件的修改，docker-gen项目为这一需求提供了便捷，根据上面HATransformation生成的高可用体系结构来利用Compose完成实例的自动化部署。自动化部署的例子可以参考[Demo](https://github.com/anthony0859/docker)，是对Apache服务器构件进行主主模式高可用部署的例子，在docker目录下运行

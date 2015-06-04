@@ -8,7 +8,7 @@
 
 下载AcmeLib Runtime，[AcmeLib下载地址](http://acme.able.cs.cmu.edu/acmeweb/download.php)
 
-下载HATransformation项目，[HATransformation下载地址](https://github.com/anthony0859/HATransformation)
+下载HATransformation项目，[HATransformation下载地址](https://github.com/anthony0859/HATrans)
 
 安装Docker1.5及以上运行环境，[Docker安装介绍](https://docs.docker.com/installation/#installation)，[Docker Compose使用介绍](https://docs.docker.com/compose/)
 
